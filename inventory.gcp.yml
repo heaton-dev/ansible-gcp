@@ -1,0 +1,17 @@
+---
+plugin: gcp_compute
+projects:
+  - ab-heaton-dev
+auth_kind: application
+keyed_groups:
+  - key: labels
+    prefix: label
+  - key: zone
+    prefix: zone
+  - key: (tags.items|list)
+    prefix: tag
+groups:
+  gke: "'gke' in name"
+compose:
+  # set the ansible_host variable to connect with the private IP address without changing the hostname
+  ansible_host: name

@@ -1,0 +1,14 @@
+---
+- name: Test
+  hosts: all
+
+  tasks:
+  - name: Test | Verify connection and usable Python
+    ansible.builtin.ping:
+      
+  - name: Test | Hostname from Shell
+    ansible.builtin.shell: |
+      hostname
+    args:
+      executable: /bin/bash
+    changed_when: False

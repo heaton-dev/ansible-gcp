@@ -1,0 +1,4 @@
+ansible
+google-auth
+pywinrm
+requests
